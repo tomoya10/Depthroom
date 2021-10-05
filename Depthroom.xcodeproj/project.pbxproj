@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6406E37826BFAFF200DFC824 /* newRoomViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E37726BFAFF200DFC824 /* newRoomViewController2.swift */; };
+		6406E37A26BFB67000DFC824 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E37926BFB67000DFC824 /* Room.swift */; };
+		6406E37D26C50A1600DFC824 /* roomCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E37B26C50A1600DFC824 /* roomCreateCell.swift */; };
+		6406E37E26C50A1600DFC824 /* roomCreateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6406E37C26C50A1600DFC824 /* roomCreateCell.xib */; };
+		6406E38426C6622500DFC824 /* roomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E38226C6622500DFC824 /* roomCell.swift */; };
+		6406E38526C6622500DFC824 /* roomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6406E38326C6622500DFC824 /* roomCell.xib */; };
+		6406E38726C66FC000DFC824 /* roomChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E38626C66FC000DFC824 /* roomChatViewController.swift */; };
+		6406E38926CAB42D00DFC824 /* GroupChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E38826CAB42D00DFC824 /* GroupChat.swift */; };
+		6406E38B26CD42BD00DFC824 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E38A26CD42BD00DFC824 /* searchViewController.swift */; };
+		6406E38F26D408AC00DFC824 /* roomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E38E26D408AC00DFC824 /* roomModalViewController.swift */; };
+		6406E39126D40B3500DFC824 /* customPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E39026D40B3500DFC824 /* customPresentationController.swift */; };
+		6406E39526D93C2A00DFC824 /* newRoomViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406E39426D93C2A00DFC824 /* newRoomViewController1.swift */; };
+		6429AB2326F1AF9C00920865 /* inRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429AB2226F1AF9C00920865 /* inRoomViewController.swift */; };
+		6429AB2726F3988B00920865 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429AB2626F3988B00920865 /* Invitation.swift */; };
+		6429AB2926F39B9000920865 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429AB2826F39B9000920865 /* Member.swift */; };
+		648DCA5626E8A3490048B3B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 648DCA5526E8A3480048B3B0 /* GoogleService-Info.plist */; };
+		649B8B312698420F007B2056 /* myProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B302698420F007B2056 /* myProfileEditViewController.swift */; };
+		649B8B3526996379007B2056 /* postIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B3426996379007B2056 /* postIndexViewController.swift */; };
+		649B8B372699E4FE007B2056 /* newPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B362699E4FE007B2056 /* newPostViewController.swift */; };
+		649B8B39269AE59B007B2056 /* postShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B38269AE59B007B2056 /* postShowViewController.swift */; };
+		649B8B3B26A087FF007B2056 /* followsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B3A26A087FF007B2056 /* followsViewController.swift */; };
+		649B8B3D26A08AC3007B2056 /* Follow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B3C26A08AC3007B2056 /* Follow.swift */; };
+		649B8B4126A5955C007B2056 /* directMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B4026A5955C007B2056 /* directMessageViewController.swift */; };
+		649B8B4526A68EEB007B2056 /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B8B4426A68EEB007B2056 /* MockMessage.swift */; };
+		64EA6B3D268230FE001D0E88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B3C268230FE001D0E88 /* AppDelegate.swift */; };
+		64EA6B3F268230FE001D0E88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B3E268230FE001D0E88 /* SceneDelegate.swift */; };
+		64EA6B41268230FE001D0E88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B40268230FE001D0E88 /* ViewController.swift */; };
+		64EA6B44268230FE001D0E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EA6B42268230FE001D0E88 /* Main.storyboard */; };
+		64EA6B46268230FF001D0E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64EA6B45268230FF001D0E88 /* Assets.xcassets */; };
+		64EA6B49268230FF001D0E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EA6B47268230FF001D0E88 /* LaunchScreen.storyboard */; };
+		64EA6B59268235DB001D0E88 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B58268235DB001D0E88 /* AppUser.swift */; };
+		64EA6B5B268239F6001D0E88 /* newRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B5A268239F6001D0E88 /* newRegisterViewController.swift */; };
+		64EA6B5D2682CC8C001D0E88 /* additionalRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B5C2682CC8C001D0E88 /* additionalRegisterViewController.swift */; };
+		64EA6B612683270B001D0E88 /* CheckPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B602683270B001D0E88 /* CheckPermission.swift */; };
+		64EA6B63268EF0DF001D0E88 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B62268EF0DF001D0E88 /* loginViewController.swift */; };
+		64EA6B65268F7B9E001D0E88 /* myRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B64268F7B9E001D0E88 /* myRoomsViewController.swift */; };
+		64EA6B672692F1A5001D0E88 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B662692F1A5001D0E88 /* Post.swift */; };
+		64EA6B69269440A4001D0E88 /* myPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA6B68269440A4001D0E88 /* myPageViewController.swift */; };
+		E3EDBAB38F99C2804181A5D6 /* Pods_Depthroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3627E8E37937CF2FBBD1435E /* Pods_Depthroom.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3627E8E37937CF2FBBD1435E /* Pods_Depthroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Depthroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFB065BDC2352934279BB46 /* Pods-Depthroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Depthroom.release.xcconfig"; path = "Target Support Files/Pods-Depthroom/Pods-Depthroom.release.xcconfig"; sourceTree = "<group>"; };
+		6406E37726BFAFF200DFC824 /* newRoomViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRoomViewController2.swift; sourceTree = "<group>"; };
+		6406E37926BFB67000DFC824 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		6406E37B26C50A1600DFC824 /* roomCreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomCreateCell.swift; sourceTree = "<group>"; };
+		6406E37C26C50A1600DFC824 /* roomCreateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = roomCreateCell.xib; sourceTree = "<group>"; };
+		6406E38226C6622500DFC824 /* roomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomCell.swift; sourceTree = "<group>"; };
+		6406E38326C6622500DFC824 /* roomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = roomCell.xib; sourceTree = "<group>"; };
+		6406E38626C66FC000DFC824 /* roomChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomChatViewController.swift; sourceTree = "<group>"; };
+		6406E38826CAB42D00DFC824 /* GroupChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChat.swift; sourceTree = "<group>"; };
+		6406E38A26CD42BD00DFC824 /* searchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
+		6406E38E26D408AC00DFC824 /* roomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomModalViewController.swift; sourceTree = "<group>"; };
+		6406E39026D40B3500DFC824 /* customPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customPresentationController.swift; sourceTree = "<group>"; };
+		6406E39426D93C2A00DFC824 /* newRoomViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRoomViewController1.swift; sourceTree = "<group>"; };
+		6429AB2226F1AF9C00920865 /* inRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inRoomViewController.swift; sourceTree = "<group>"; };
+		6429AB2626F3988B00920865 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
+		6429AB2826F39B9000920865 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		648DCA5526E8A3480048B3B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		649B8B302698420F007B2056 /* myProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileEditViewController.swift; sourceTree = "<group>"; };
+		649B8B3426996379007B2056 /* postIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postIndexViewController.swift; sourceTree = "<group>"; };
+		649B8B362699E4FE007B2056 /* newPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newPostViewController.swift; sourceTree = "<group>"; };
+		649B8B38269AE59B007B2056 /* postShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postShowViewController.swift; sourceTree = "<group>"; };
+		649B8B3A26A087FF007B2056 /* followsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followsViewController.swift; sourceTree = "<group>"; };
+		649B8B3C26A08AC3007B2056 /* Follow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follow.swift; sourceTree = "<group>"; };
+		649B8B4026A5955C007B2056 /* directMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = directMessageViewController.swift; sourceTree = "<group>"; };
+		649B8B4426A68EEB007B2056 /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
+		64EA6B39268230FE001D0E88 /* Depthroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Depthroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64EA6B3C268230FE001D0E88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		64EA6B3E268230FE001D0E88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		64EA6B40268230FE001D0E88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64EA6B43268230FE001D0E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64EA6B45268230FF001D0E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64EA6B48268230FF001D0E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		64EA6B4A268230FF001D0E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64EA6B58268235DB001D0E88 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		64EA6B5A268239F6001D0E88 /* newRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRegisterViewController.swift; sourceTree = "<group>"; };
+		64EA6B5C2682CC8C001D0E88 /* additionalRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = additionalRegisterViewController.swift; sourceTree = "<group>"; };
+		64EA6B602683270B001D0E88 /* CheckPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPermission.swift; sourceTree = "<group>"; };
+		64EA6B62268EF0DF001D0E88 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		64EA6B64268F7B9E001D0E88 /* myRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRoomsViewController.swift; sourceTree = "<group>"; };
+		64EA6B662692F1A5001D0E88 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		64EA6B68269440A4001D0E88 /* myPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPageViewController.swift; sourceTree = "<group>"; };
+		6EED16E22292FD9E0148DDBB /* Pods-Depthroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Depthroom.debug.xcconfig"; path = "Target Support Files/Pods-Depthroom/Pods-Depthroom.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64EA6B36268230FE001D0E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EDBAB38F99C2804181A5D6 /* Pods_Depthroom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3064A878959765A878812F42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3627E8E37937CF2FBBD1435E /* Pods_Depthroom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6406E38126C6579A00DFC824 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6406E37B26C50A1600DFC824 /* roomCreateCell.swift */,
+				6406E37C26C50A1600DFC824 /* roomCreateCell.xib */,
+				6406E38226C6622500DFC824 /* roomCell.swift */,
+				6406E38326C6622500DFC824 /* roomCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		64EA6B30268230FE001D0E88 = {
+			isa = PBXGroup;
+			children = (
+				64EA6B3B268230FE001D0E88 /* Depthroom */,
+				64EA6B3A268230FE001D0E88 /* Products */,
+				D9B58031E4C3132A712AB0F6 /* Pods */,
+				3064A878959765A878812F42 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		64EA6B3A268230FE001D0E88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64EA6B39268230FE001D0E88 /* Depthroom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64EA6B3B268230FE001D0E88 /* Depthroom */ = {
+			isa = PBXGroup;
+			children = (
+				64EA6B5226823506001D0E88 /* Model */,
+				6406E38126C6579A00DFC824 /* Cell */,
+				64EA6B5626823552001D0E88 /* Controller */,
+				64EA6B5726823565001D0E88 /* View */,
+				64EA6B42268230FE001D0E88 /* Main.storyboard */,
+				64EA6B3C268230FE001D0E88 /* AppDelegate.swift */,
+				64EA6B3E268230FE001D0E88 /* SceneDelegate.swift */,
+				64EA6B45268230FF001D0E88 /* Assets.xcassets */,
+				64EA6B47268230FF001D0E88 /* LaunchScreen.storyboard */,
+				648DCA5526E8A3480048B3B0 /* GoogleService-Info.plist */,
+				64EA6B4A268230FF001D0E88 /* Info.plist */,
+			);
+			path = Depthroom;
+			sourceTree = "<group>";
+		};
+		64EA6B5226823506001D0E88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64EA6B58268235DB001D0E88 /* AppUser.swift */,
+				64EA6B602683270B001D0E88 /* CheckPermission.swift */,
+				64EA6B662692F1A5001D0E88 /* Post.swift */,
+				649B8B3C26A08AC3007B2056 /* Follow.swift */,
+				649B8B4426A68EEB007B2056 /* MockMessage.swift */,
+				6406E37926BFB67000DFC824 /* Room.swift */,
+				6406E38826CAB42D00DFC824 /* GroupChat.swift */,
+				6429AB2626F3988B00920865 /* Invitation.swift */,
+				6429AB2826F39B9000920865 /* Member.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64EA6B5626823552001D0E88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64EA6B40268230FE001D0E88 /* ViewController.swift */,
+				64EA6B5A268239F6001D0E88 /* newRegisterViewController.swift */,
+				64EA6B5C2682CC8C001D0E88 /* additionalRegisterViewController.swift */,
+				64EA6B62268EF0DF001D0E88 /* loginViewController.swift */,
+				64EA6B64268F7B9E001D0E88 /* myRoomsViewController.swift */,
+				64EA6B68269440A4001D0E88 /* myPageViewController.swift */,
+				649B8B302698420F007B2056 /* myProfileEditViewController.swift */,
+				649B8B3426996379007B2056 /* postIndexViewController.swift */,
+				649B8B362699E4FE007B2056 /* newPostViewController.swift */,
+				649B8B38269AE59B007B2056 /* postShowViewController.swift */,
+				649B8B3A26A087FF007B2056 /* followsViewController.swift */,
+				649B8B4026A5955C007B2056 /* directMessageViewController.swift */,
+				6406E37726BFAFF200DFC824 /* newRoomViewController2.swift */,
+				6406E38626C66FC000DFC824 /* roomChatViewController.swift */,
+				6406E38A26CD42BD00DFC824 /* searchViewController.swift */,
+				6406E38E26D408AC00DFC824 /* roomModalViewController.swift */,
+				6406E39026D40B3500DFC824 /* customPresentationController.swift */,
+				6406E39426D93C2A00DFC824 /* newRoomViewController1.swift */,
+				6429AB2226F1AF9C00920865 /* inRoomViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		64EA6B5726823565001D0E88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9B58031E4C3132A712AB0F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EED16E22292FD9E0148DDBB /* Pods-Depthroom.debug.xcconfig */,
+				3AFB065BDC2352934279BB46 /* Pods-Depthroom.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64EA6B38268230FE001D0E88 /* Depthroom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64EA6B4D268230FF001D0E88 /* Build configuration list for PBXNativeTarget "Depthroom" */;
+			buildPhases = (
+				691BC5CFDE51E53A6058D3B8 /* [CP] Check Pods Manifest.lock */,
+				64EA6B35268230FE001D0E88 /* Sources */,
+				64EA6B36268230FE001D0E88 /* Frameworks */,
+				64EA6B37268230FE001D0E88 /* Resources */,
+				682687C73DE9E405A219D782 /* [CP] Embed Pods Frameworks */,
+				18041B8CAC98CFE66D723E9C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Depthroom;
+			productName = Depthroom;
+			productReference = 64EA6B39268230FE001D0E88 /* Depthroom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64EA6B31268230FE001D0E88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					64EA6B38268230FE001D0E88 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 64EA6B34268230FE001D0E88 /* Build configuration list for PBXProject "Depthroom" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64EA6B30268230FE001D0E88;
+			productRefGroup = 64EA6B3A268230FE001D0E88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64EA6B38268230FE001D0E88 /* Depthroom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64EA6B37268230FE001D0E88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6406E37E26C50A1600DFC824 /* roomCreateCell.xib in Resources */,
+				6406E38526C6622500DFC824 /* roomCell.xib in Resources */,
+				64EA6B49268230FF001D0E88 /* LaunchScreen.storyboard in Resources */,
+				64EA6B46268230FF001D0E88 /* Assets.xcassets in Resources */,
+				64EA6B44268230FE001D0E88 /* Main.storyboard in Resources */,
+				648DCA5626E8A3490048B3B0 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18041B8CAC98CFE66D723E9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682687C73DE9E405A219D782 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Depthroom/Pods-Depthroom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		691BC5CFDE51E53A6058D3B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Depthroom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64EA6B35268230FE001D0E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649B8B4526A68EEB007B2056 /* MockMessage.swift in Sources */,
+				64EA6B5D2682CC8C001D0E88 /* additionalRegisterViewController.swift in Sources */,
+				6406E38B26CD42BD00DFC824 /* searchViewController.swift in Sources */,
+				6406E37A26BFB67000DFC824 /* Room.swift in Sources */,
+				6406E38726C66FC000DFC824 /* roomChatViewController.swift in Sources */,
+				649B8B372699E4FE007B2056 /* newPostViewController.swift in Sources */,
+				6406E37D26C50A1600DFC824 /* roomCreateCell.swift in Sources */,
+				64EA6B59268235DB001D0E88 /* AppUser.swift in Sources */,
+				6406E39526D93C2A00DFC824 /* newRoomViewController1.swift in Sources */,
+				6406E38F26D408AC00DFC824 /* roomModalViewController.swift in Sources */,
+				64EA6B65268F7B9E001D0E88 /* myRoomsViewController.swift in Sources */,
+				64EA6B41268230FE001D0E88 /* ViewController.swift in Sources */,
+				6406E38426C6622500DFC824 /* roomCell.swift in Sources */,
+				649B8B3526996379007B2056 /* postIndexViewController.swift in Sources */,
+				64EA6B3D268230FE001D0E88 /* AppDelegate.swift in Sources */,
+				6429AB2726F3988B00920865 /* Invitation.swift in Sources */,
+				649B8B3D26A08AC3007B2056 /* Follow.swift in Sources */,
+				64EA6B63268EF0DF001D0E88 /* loginViewController.swift in Sources */,
+				64EA6B612683270B001D0E88 /* CheckPermission.swift in Sources */,
+				64EA6B3F268230FE001D0E88 /* SceneDelegate.swift in Sources */,
+				649B8B312698420F007B2056 /* myProfileEditViewController.swift in Sources */,
+				6406E38926CAB42D00DFC824 /* GroupChat.swift in Sources */,
+				6406E39126D40B3500DFC824 /* customPresentationController.swift in Sources */,
+				649B8B3B26A087FF007B2056 /* followsViewController.swift in Sources */,
+				64EA6B5B268239F6001D0E88 /* newRegisterViewController.swift in Sources */,
+				649B8B39269AE59B007B2056 /* postShowViewController.swift in Sources */,
+				6406E37826BFAFF200DFC824 /* newRoomViewController2.swift in Sources */,
+				6429AB2326F1AF9C00920865 /* inRoomViewController.swift in Sources */,
+				64EA6B69269440A4001D0E88 /* myPageViewController.swift in Sources */,
+				64EA6B672692F1A5001D0E88 /* Post.swift in Sources */,
+				649B8B4126A5955C007B2056 /* directMessageViewController.swift in Sources */,
+				6429AB2926F39B9000920865 /* Member.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		64EA6B42268230FE001D0E88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64EA6B43268230FE001D0E88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		64EA6B47268230FF001D0E88 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64EA6B48268230FF001D0E88 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64EA6B4B268230FF001D0E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64EA6B4C268230FF001D0E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64EA6B4E268230FF001D0E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EED16E22292FD9E0148DDBB /* Pods-Depthroom.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FGWN3JVJ4H;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = Depthroom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steins.Depthroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		64EA6B4F268230FF001D0E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AFB065BDC2352934279BB46 /* Pods-Depthroom.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FGWN3JVJ4H;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				INFOPLIST_FILE = Depthroom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.steins.Depthroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64EA6B34268230FE001D0E88 /* Build configuration list for PBXProject "Depthroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64EA6B4B268230FF001D0E88 /* Debug */,
+				64EA6B4C268230FF001D0E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64EA6B4D268230FF001D0E88 /* Build configuration list for PBXNativeTarget "Depthroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64EA6B4E268230FF001D0E88 /* Debug */,
+				64EA6B4F268230FF001D0E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64EA6B31268230FE001D0E88 /* Project object */;
+}
