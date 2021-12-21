@@ -10,8 +10,11 @@ import MessageKit
 import InputBarAccessoryView
 import Firebase
 import FirebaseStorageUI
+import Photos
+import FirebaseStorage
 
-class roomChatViewController: MessagesViewController {
+
+class roomChatViewController: MessagesViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     var room: Room!
     var database: Firestore!
@@ -35,6 +38,18 @@ class roomChatViewController: MessagesViewController {
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter
     }()
+    
+//    private var isSendingPhoto = false {
+//      didSet {
+//        messageInputBar.leftStackViewItems.forEach { item in
+//          guard let item = item as? InputBarButtonItem else {
+//            return
+//          }
+//          item.isEnabled = !self.isSendingPhoto
+//        }
+//      }
+//    }
+//    private let storage1 = Storage.storage().reference(forURL: "gs://depthroom-5140f.appspot.com")
 
     
     override func viewDidLoad() {
@@ -43,7 +58,7 @@ class roomChatViewController: MessagesViewController {
         database = Firestore.firestore()
         storage = Storage.storage()
         auth = Auth.auth()
-        
+
         database.collection("users").document(auth.currentUser!.uid).getDocument { (snapshot, error) in
             if error == nil, let snapshot = snapshot, let data = snapshot.data(){
                 self.me = AppUser(data: data)
@@ -51,9 +66,11 @@ class roomChatViewController: MessagesViewController {
                 self.meName = self.me.userName
             }
         }
-        let rightBarButton = UIBarButtonItem(title: "チャットルーム参加", style: .plain, target: self, action: #selector(tappedAddRightBarButton))
+        let rightBarButton = UIBarButtonItem(title: "チャットルーム参加者", style: .plain, target: self, action: #selector(tappedAddRightBarButton))
         navigationItem.rightBarButtonItem = rightBarButton
-
+        
+        
+        
         
         fireStoreDocumentChange()
         
@@ -65,6 +82,9 @@ class roomChatViewController: MessagesViewController {
         
         setupInput()
         setupButton()
+        addCameraBarButton()
+
+        
         // 背景の色を指定
         messagesCollectionView.backgroundColor = .white
         
@@ -74,7 +94,22 @@ class roomChatViewController: MessagesViewController {
         
     }
     
+    // MARK: - Actions
+    @objc private func cameraButtonPressed() {
+      let picker = UIImagePickerController()
+      picker.delegate = self
+
+      if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        picker.sourceType = .camera
+      } else {
+        picker.sourceType = .photoLibrary
+      }
+        //upload()
+      present(picker, animated: true)
+        
+    }
     
+    //チャットルーム参加者一覧
     @objc private func tappedAddRightBarButton() {
         let storyboard: UIStoryboard = self.storyboard!
         let inRoomViewController = storyboard.instantiateViewController(identifier: "inRoomViewController") as! inRoomViewController
@@ -83,6 +118,7 @@ class roomChatViewController: MessagesViewController {
         
         navigationController?.pushViewController(inRoomViewController, animated: true)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -95,7 +131,6 @@ class roomChatViewController: MessagesViewController {
     }
     
     func fireStoreDocumentChange(){
-        
         //チャット内容をFireStoreから取得・ドキュメントに変更が生じた際、messageListにドキュメントを追加するroom.roomID
         database.collection("rooms").document(room.roomID).collection("messages").order(by: "timeStamp", descending: false).addSnapshotListener { (snapShot, error) in
             guard snapShot != nil else {
@@ -124,6 +159,68 @@ class roomChatViewController: MessagesViewController {
                 }
             }
         }
+    }
+    
+//    fileprivate func upload() {
+//           let date = NSDate()
+//           let currentTimeStampInSecond = UInt64(floor(date.timeIntervalSince1970 * 1000))
+//        let storageRef = storage.reference(forURL: "gs://depthroom-5140f.appspot.com/").child("chat").child("\(currentTimeStampInSecond).jpg")
+//          // let storageRef = Storage.storage().reference().child("images").child("\(currentTimeStampInSecond).jpg")
+//           let metaData = StorageMetadata()
+//           metaData.contentType = "image/jpg"
+//           if let uploadData = self.imageView.image?.jpegData(compressionQuality: 0.9) {
+//               storageRef.putData(uploadData, metadata: metaData) { (metadata , error) in
+//                   if error != nil {
+//                       print("error: \(error?.localizedDescription)")
+//                   }
+//                   storageRef.downloadURL(completion: { (url, error) in
+//                       if error != nil {
+//                           print("error: \(error?.localizedDescription)")
+//                       }
+//                       print("url: \(url?.absoluteString)")
+//                   })
+//               }
+//           }
+//       }
+    
+  
+    // MARK: - setupInputBarButton
+    private func removeMessageAvatars() {
+      guard let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout else {
+        return
+      }
+      layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
+      layout.textMessageSizeCalculator.incomingAvatarSize = .zero
+      layout.setMessageIncomingAvatarSize(.zero)
+      layout.setMessageOutgoingAvatarSize(.zero)
+      let incomingLabelAlignment = LabelAlignment(
+        textAlignment: .left,
+        textInsets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0))
+      layout.setMessageIncomingMessageTopLabelAlignment(incomingLabelAlignment)
+      let outgoingLabelAlignment = LabelAlignment(
+        textAlignment: .right,
+        textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15))
+      layout.setMessageOutgoingMessageTopLabelAlignment(outgoingLabelAlignment)
+    }
+    
+    private func addCameraBarButton() {
+      // 1
+      let cameraItem = InputBarButtonItem(type: .system)
+      cameraItem.tintColor = .lightGray
+      cameraItem.image = UIImage(named: "home")
+
+      // 2
+      cameraItem.addTarget(
+        self,
+        action: #selector(cameraButtonPressed),
+        for: .primaryActionTriggered)
+      cameraItem.setSize(CGSize(width: 60, height: 30), animated: false)
+      messageInputBar.leftStackView.alignment = .center
+      messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+
+      // 3
+      messageInputBar
+        .setStackViewItems([cameraItem], forStack: .left, animated: false)
     }
     
     private func setupInput(){
@@ -378,3 +475,25 @@ extension roomChatViewController {
     }
 }
 
+//extension roomChatViewController: CameraInputBarAccessoryViewDelegate {
+//
+//    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith attachments: [AttachmentManager.Attachment]) {
+//
+//
+//        for item in attachments {
+//            if  case .image(let image) = item {
+//
+//                self.sendImageMessage(photo: image)
+//            }
+//        }
+//        inputBar.invalidatePlugins()
+//    }
+//
+//
+//    func sendImageMessage( photo  : UIImage)  {
+//
+//        let photoMessage = MockMessage(image: photo, user: self.currentSender() as! MockUser, messageId: UUID().uuidString, date: Date())
+//        self.insertMessage(photoMessage)
+//    }
+//
+//}

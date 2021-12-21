@@ -64,6 +64,7 @@ class myRoomsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        roomInfo()
         //予約時間に達した部屋を入室可能状態にする(visibleをfalseからtrueに)
         //2021/09/07時間になるとtrueになるが、選択したかったら一度立ち上げ直す必要がある問題
         activeRoomFromReserved()

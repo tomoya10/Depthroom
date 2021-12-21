@@ -15,14 +15,34 @@ class inRoomViewController: UIViewController,UITableViewDataSource, UITableViewD
     var database: Firestore!
     var storage: Storage!
     var auth: Auth!
-//    var invitation: Invitation!
-//    var member: Member!
+    //    var invitation: Invitation!
+    //    var member: Member!
+    
+    var membersArray:[AppUser] = [] {
+        didSet{
+            //membersArray配列に変化があった際に呼ばれる
+            tableView.reloadData()
+        }
+    }
+    
+    var invitationArray:[AppUser] = [] {
+        didSet{
+            //membersArray配列に変化があった際に呼ばれる
+            tableView.reloadData()
+        }
+    }
+    
     
     //ルームメンバーの配列
-    var members:[[String:Any]] = []
+    var members:[String] = []
     //招待されている人の配列
     var invitation:[String] = []
-
+    
+    //ルームメンバーの配列
+    var membersID:[AppUser] = []
+    //招待されている人の配列
+    var invitationID:[AppUser] = []
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var selectSegmentedControl: UISegmentedControl!
@@ -46,53 +66,38 @@ class inRoomViewController: UIViewController,UITableViewDataSource, UITableViewD
         //ユーザネームを表示
         database.collection("rooms").document(
             room.roomID).getDocument { (snapshot, error) in
-            if error == nil, let snapshot = snapshot, let data = snapshot.data() {
-                self.room = Room(data: data)
-                self.roomNameLabel.text = self.room.roomName
-                print(self.room.roomName!)//!つけた
+                if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+                    self.room = Room(data: data)
+                    self.roomNameLabel.text = self.room.roomName
+                }
             }
-        }
-        
+
+        membersArray = []
+        invitationArray = []
         //ルームのメンバーのIDをFireStoreから取得、配列に格納
-//        database.collection("members").document(room.roomID).getDocument { (snapshot, error) in
-//            if error == nil, let snapshot = snapshot, let data = snapshot.data(){
-//                let mapData = data["users"] //as! [String:Any]
-//                //self.members = []
-//               // self.members.append(mapData!)
-//                print(Array(data.keys))
-//                print("data.value:",Array(data.values))
-//                print("member.mapData",mapData ?? 0)
-//            }
-//        }
-        
-        //招待されている人のIDをFireStoreから取得、配列に格納
-        
-        database.collection("invitation").document(room.roomID).getDocument { (snapshot, error) in
-            if error == nil, let snapshot = snapshot , let data = snapshot.data(){
-//                  let mapData = data["users"]
-                let dic_objc = NSMutableDictionary(dictionary: data)
-                let mapData = dic_objc as NSDictionary as! [String: Any]
-                let valuedata = mapData["users"] as! [AnyObject]
-                //let userid = valuedata[0][0]["userID"]
-                //let idvalue = mapData.object["userID"]
-//                if(mapData as AnyObject).isEmpty == true{
-//                    print("何もない")
-//                }else{
-//                    print("ある")
-//                }
-//                for value in valuedata {
-//                    print(value)
-//                }
-                print(Array(data.keys))
-                print("valuedata: ", valuedata[0])
-                //object.getForKey("userID") as! String
-                self.invitation = []
-                //self.invitation.append(valuedata["userID"])
-//                print("valuedata:",valuedata[0])
-//                print("invitation:",self.invitation[0])
+        database.collection("rooms").document(room.roomID).getDocument { (snapshot, error) in
+            if error == nil, let snapshot = snapshot, let data = snapshot.data(){
+                if let members = data["members"] as? [String:Any]{
+                    for members in members.values{
+                        let memberInfo = AppUser(data: members as! [String:Any])
+                        self.membersArray.append(memberInfo)
+                    }
+                }
+                
+                if let invitation = data["invitation"] as? [String:Any]{
+                    for invitation in invitation.values{
+                        let invitationInfo = AppUser(data: invitation as! [String:Any])
+                        self.invitationArray.append(invitationInfo)
+                    }
+                }
+                self.tableView.reloadData()
             }
         }
     }
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //フォロー・フォロワーごとに配列を切り替えて遷移の値渡しを行なっている
@@ -101,9 +106,9 @@ class inRoomViewController: UIViewController,UITableViewDataSource, UITableViewD
             let segmentIndex = selectSegmentedControl.selectedSegmentIndex
             switch segmentIndex {
             case 0:
-                nextViewController.user = AppUser(data: ["userID": members[sender as! Int]])
+                nextViewController.user = AppUser(data: ["userID": membersArray[sender as! Int].userID!])
             case 1:
-                nextViewController.user = AppUser(data: ["userID": invitation[sender as! Int]])
+                nextViewController.user = AppUser(data: ["userID": invitationArray[sender as! Int].userID!])
             default:
                 break
             }
@@ -123,9 +128,9 @@ class inRoomViewController: UIViewController,UITableViewDataSource, UITableViewD
         let segmentIndex = selectSegmentedControl.selectedSegmentIndex
         switch segmentIndex {
         case 0:
-            return members.count
+            return membersArray.count
         case 1:
-            return invitation.count
+            return invitationArray.count
         default:
             return 100
         }
@@ -133,27 +138,30 @@ class inRoomViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-//        let segmentIndex = selectSegmentedControl.selectedSegmentIndex
-//        switch segmentIndex {
-//        case 0:
-//            database.collection("users").document(members[indexPath.row]).getDocument { (snapshot, error) in
-//                if error == nil, let snapshot = snapshot, let data = snapshot.data(){
-//                    let appUser = AppUser(data: data)
-//                    cell.textLabel?.text = appUser.userName
-//                }
-//            }
-//        case 1:
-//            database.collection("users").document(invitation[indexPath.row]).getDocument { (snapshot, error) in
-//                if error == nil, let snapshot = snapshot, let data = snapshot.data(){
-//                    let appUser = AppUser(data: data)
-//                    cell.textLabel?.text = appUser.userName
-//                }
-//            }
-//
-//        default:
-//            break
-//        }
+        let segmentIndex = selectSegmentedControl.selectedSegmentIndex
+        switch segmentIndex {
+        case 0:
+            database.collection("users").document(membersArray[indexPath.row].userID).getDocument { (snapshot, error) in
+                if error == nil, let snapshot = snapshot, let data = snapshot.data(){
+                    let membersUser = AppUser(data: data)
+                    //cell.textLabel?.text = membersArray[indexPath.row].userName
+                    //print("members:", appUser.userName)
+                    cell.textLabel?.text = membersUser.userName
+                }
+            }
+        case 1:
+            database.collection("users").document(invitationArray[indexPath.row].userID).getDocument { (snapshot, error) in
+                if error == nil, let snapshot = snapshot, let data = snapshot.data(){
+                    let invitationUser = AppUser(data: data)
+                    //print("invitation:", appUser.userName)
+                    cell.textLabel?.text = invitationUser.userName
+                }
+            }
+            
+        default:
+            break
+        }
         return cell
     }
-
+    
 }

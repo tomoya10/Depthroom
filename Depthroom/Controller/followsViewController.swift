@@ -30,6 +30,7 @@ class followsViewController: UIViewController,UITableViewDataSource, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         followArray = []
+        followerAraay = []
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,11 +39,20 @@ class followsViewController: UIViewController,UITableViewDataSource, UITableView
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
             //ユーザネーム・フォロー周りの情報を表示
-            database.collection("users").document(user.userID).getDocument { (snapshot, error) in
+        database.collection("users").document(user.userID)//.addSnapshotListener{ (snapshot, error)in
+                .getDocument { (snapshot, error) in
                 if error == nil, let snapshot = snapshot, let data = snapshot.data() {
+                    
+//                    snapshot.documentChanges.forEach({(documentChange) in
+//                        switch documentChange.type{
+//                        case .added:
+//                            print("")
+//                        }
+//                    })
                     self.user = AppUser(data: data)
                     self.userNameLabel.text = self.user.userName
-                    
+                    self.followArray = []
+                    self.followerAraay = []
                     //フォロー情報を配列に格納
                     if let follow = data["follow"] as? [String:Any]{
                         for follow in follow.values{

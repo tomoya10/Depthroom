@@ -1037,6 +1037,9 @@
                                     <segment title="参加者"/>
                                     <segment title="招待者"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tappedSegmentedControl:" destination="FBm-i5-jeL" eventType="valueChanged" id="3IK-ff-WTH"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pec-ls-MSD">
                                 <rect key="frame" x="20" y="95" width="374" height="45"/>
@@ -1085,6 +1088,7 @@
                         <outlet property="roomNameLabel" destination="Pec-ls-MSD" id="INT-z0-uFX"/>
                         <outlet property="selectSegmentedControl" destination="FuI-2e-cl5" id="DJk-9i-pAn"/>
                         <outlet property="tableView" destination="A6d-BH-00p" id="R7O-dH-tak"/>
+                        <segue destination="FyY-p1-uC1" kind="show" id="Fsl-Dp-Erf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4da-XZ-1aX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1094,7 +1098,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BU4-GW-wyb"/>
-        <segue reference="L6K-H2-KhP"/>
+        <segue reference="ePY-C4-mOe"/>
         <segue reference="PMy-eN-7i9"/>
         <segue reference="TYI-5q-C0G"/>
     </inferredMetricsTieBreakers>
